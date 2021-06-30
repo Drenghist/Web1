@@ -49,7 +49,7 @@
         }
       });
       */
-      boton1.addEventListener("click", async () => {
+      document.getElementById("boton1").addEventListener("click", async () => {
         try{
           const ndef = new NDEFReader();
           await ndef.scan();
