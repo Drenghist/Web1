@@ -33,11 +33,17 @@
         alert("pos no existe");
        }
 
-      const ndef = new NDEFReader();
-      await ndef.scan();
-      ndef.addEventListener("reading", ({message, serialNumber }) => {
-        alert(`alerta: ${serialNumber}`);
-      });
+       
+       try{
+        const ndef = new NDEFReader();
+        await ndef.scan();
+        ndef.addEventListener("reading", ({message, serialNumber }) => {
+          alert(`alerta: ${serialNumber}`);
+        });
+       } catch (error) {
+        alert("shit!");
+       }
+      
 
      
     </script>
