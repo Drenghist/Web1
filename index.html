@@ -14,6 +14,11 @@
       function iniciar() {
         document.getElementById("input1").focus();
         document.getElementById("input1").addEventListener("blur",focus1,false);
+
+
+
+
+
       }
 
       function focus1 () {
@@ -24,8 +29,18 @@
         }
       }
 
-      window.onload = iniciar;
-
+      window.addEventListener("load",iniciar,false);
+      window.addEventListener("load", async () => {
+        try{
+          const ndef = new NDEFReader();
+          await ndef.scan();
+          ndef.addEventListener("reading", ({message, serialNumber }) => {
+            alert(`alerta: ${serialNumber}`);
+          });
+         } catch (error) {
+          alert("shit!");
+        }
+      });
 
       if ('NDEFReader' in window) { 
         alert("existe NDEFReader");
@@ -34,15 +49,7 @@
        }
 
        
-       try{
-        const ndef = new NDEFReader();
-        await ndef.scan();
-        ndef.addEventListener("reading", ({message, serialNumber }) => {
-          alert(`alerta: ${serialNumber}`);
-        });
-       } catch (error) {
-        alert("shit!");
-       }
+       
       
 
      
