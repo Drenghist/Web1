@@ -11,6 +11,15 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script>
+   
+
+    if (!("NDEFReader" in window))
+      ChromeSamples.setStatus(
+        "Web NFC is not available.\n" +
+          'Please make sure the "Experimental Web Platform features" flag is enabled on Android.'
+      );
+    </script>
+    <script>
       function iniciar() {
         document.getElementById("input1").focus();
         document.getElementById("input1").addEventListener("blur",focus1,false);
