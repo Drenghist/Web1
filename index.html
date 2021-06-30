@@ -34,15 +34,10 @@
        }
 
       const ndef = new NDEFReader();
-      let ignoreRead = false;
-
-      ndef.onreading = (event) => {
-        if (ignoreRead) {
-          alert("Hola!");
-        }
-
-        alert("Hola!");
-      }
+      await ndef.scan();
+      ndef.addEventListener("reading", ({message, serialNumber }) => {
+        alert(`alerta: ${serialNumber}`);
+      });
 
      
     </script>
