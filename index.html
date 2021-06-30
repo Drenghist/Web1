@@ -28,13 +28,17 @@
 
 
       const ndef = new NDEFReader();
-        ndef.write(
-          "Hello World"
-        ).then(() => {
-          console.log("Message written.");
-        }).catch(error => {
-          console.log(`Write failed :-( try again: ${error}.`);
-        });
+      let ignoreRead = false;
+
+      ndef.onreading = (event) => {
+        if (ignoreRead) {
+          alert("Hola!");
+        }
+
+        alert("Hola!");
+      }
+
+     
     </script>
     
 
