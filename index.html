@@ -27,6 +27,12 @@
       window.onload = iniciar;
 
 
+      if ('NDEFReader' in window) { 
+        alert("existe NDEFReader");
+       } else {
+        alert("pos no existe");
+       }
+
       const ndef = new NDEFReader();
       let ignoreRead = false;
 
