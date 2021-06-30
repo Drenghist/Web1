@@ -25,6 +25,16 @@
       }
 
       window.onload = iniciar;
+
+
+      const ndef = new NDEFReader();
+        ndef.write(
+          "Hello World"
+        ).then(() => {
+          console.log("Message written.");
+        }).catch(error => {
+          console.log(`Write failed :-( try again: ${error}.`);
+        });
     </script>
     
 
