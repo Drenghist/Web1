@@ -15,8 +15,24 @@
       function iniciar() {
         document.getElementById("input1").focus();
         //document.getElementById("input1").addEventListener("blur",focus1,false);
+        document.getElementById("input1").addEventListener("blur", async () => {
+          try{
+            const ndef = new NDEFReader();
+            await ndef.scan();
+            ndef.addEventListener("readingerror", () => {
+              alert("Argh! Cannot read data from the NFC tag. Try another one?");
+            });
 
+            ndef.addEventListener("reading", ({ message, serialNumber }) => {
+              alert(`> Serial Number: ${serialNumber}`);
+              alert(`> Records: (${message.records.length})`);
+            });
+          } catch (error) {
+            alert("Argh! " + error);
+          }
+        },false);
 
+        /*
         document.getElementById("boton1").addEventListener("click", async () => {
           try{
             const ndef = new NDEFReader();
@@ -33,6 +49,8 @@
             alert("Argh! " + error);
           }
         },false);
+        */
+
 
 
       }
@@ -65,12 +83,12 @@
       });
       */
       
-
+      /*
       if ('NDEFReader' in window) { 
         alert("existe NDEFReader");
        } else {
         alert("pos no existe");
-       }
+       }*/
 
        
        
