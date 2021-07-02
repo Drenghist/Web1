@@ -15,6 +15,11 @@
       function iniciar() {
         document.getElementById("input1").focus();
         //document.getElementById("input1").addEventListener("blur",focus1,false);
+
+
+
+
+        //Activo en automático la lectura. -----------------------------------------------------------------
         document.getElementById("input1").addEventListener("blur", async () => {
           try{
             const ndef = new NDEFReader();
@@ -32,7 +37,7 @@
           }
         },false);
 
-        /*
+        /* Con el botón, activo la lectura -------------------------------------------------------------------
         document.getElementById("boton1").addEventListener("click", async () => {
           try{
             const ndef = new NDEFReader();
@@ -64,7 +69,7 @@
       }
 
       window.addEventListener("load",iniciar,false);
-      /*
+      /* Activo la lectura en el load. no funciona. --------------------------------------------------------
       window.addEventListener("load", async () => {
         try{
           const ndef = new NDEFReader();
