@@ -67,6 +67,7 @@
 
       //Función asíncrona que active el NFC -------------------------------------------------
       async function activaNFC() {
+        const nfcPermissionStatus = await navigator.permissions.query({ name: "nfc" });
         if (nfcPermissionStatus.state === "granted") {
           document.getElementById("boton1").setAttribute("hidden",true);
           try{
