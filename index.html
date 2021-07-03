@@ -93,6 +93,7 @@
             try {
               const ndef2 = new NDEFReader();
               await ndef2.scan();
+              await document.getElementById("boton1").style.display = 'none';
             } catch (error) {
               alert("OJO! " + error);
             }
