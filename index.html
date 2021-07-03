@@ -93,13 +93,14 @@
             try {
               const ndef2 = new NDEFReader();
               await ndef2.scan();
+              document.getElementById("boton1").style.display = 'none';
             } catch (error) {
               alert("OJO! " + error);
             }
 
           },true);
           document.getElementById("boton1").addEventListener("click",  () => {
-            document.getElementById("boton1").style.display = 'none';
+            //document.getElementById("boton1").style.display = 'none';
           },false);
         }
       } 
