@@ -15,7 +15,7 @@
       function iniciar() {
         //alert("windows on load");
         document.getElementById("input1").focus();
-        document.getElementById("boton1").addEventListener("click",activaNFC,false);
+        
         //document.getElementById("input1").addEventListener("blur",focus1,false);
 
         //Llamo a la función para que active el NFC -------------------------------------------------
@@ -88,6 +88,16 @@
             }
           }else {
           document.getElementById("boton1").style.display = 'inline';
+          document.getElementById("boton1").addEventListener("click", () => {
+            
+            try {
+              const ndef2 = new NDEFReader();
+              await ndef2.scan();
+            } catch (error) {
+              alert("OJO! " + error);
+            }
+
+          },false);
         }
       } 
 
