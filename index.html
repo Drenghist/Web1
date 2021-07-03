@@ -17,10 +17,11 @@
         document.getElementById("input1").focus();
         //document.getElementById("input1").addEventListener("blur",focus1,false);
 
+        //Llamo a la función para que active el NFC -------------------------------------------------
+        activaNFC();
 
 
-
-        //Activo en automático la lectura. -----------------------------------------------------------------
+        //Activo lectura en el blur. -----------------------------------------------------------------
         document.getElementById("input1").addEventListener("blur", async () => {
           try{
             const ndef = new NDEFReader();
@@ -62,6 +63,27 @@
 
 
       }
+
+      //Función asíncrona que active el NFC -------------------------------------------------
+      async function activaNFC() {
+        try{
+            const ndef = new NDEFReader();
+            alert("antes del wait");
+            await ndef.scan();
+            alert("after wait");
+            ndef.addEventListener("readingerror", () => {
+              alert("Argh! Cannot read data from the NFC tag. Try another one?");
+            });
+
+            ndef.addEventListener("reading", ({ message, serialNumber }) => {
+              alert(`> Serial Number: ${serialNumber}`);
+              alert(`> Records: (${message.records.length})`);
+            });
+          } catch (error) {
+            alert("Argh! " + error);
+          }
+      }
+
 
       function focus1 () {
         if (document.getElementById("input1").value != ""){
