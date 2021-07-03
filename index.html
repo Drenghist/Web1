@@ -82,6 +82,10 @@
               ndef.addEventListener("reading", ({ message, serialNumber }) => {
                 alert(`> Serial Number: ${serialNumber}`);
                 alert(`> Records: (${message.records.length})`);
+                for (const record of message.records){
+                  const textDecoder = new TextDecoder(record.encoding);
+                  alert(`Contenido: ${textDecoder.decode(record.data)}`);
+                }
               });
             } catch (error) {
               alert("Argh! " + error);
