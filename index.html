@@ -80,11 +80,12 @@
               });
 
               ndef.addEventListener("reading", ({ message, serialNumber }) => {
-                alert(`> Serial Number: ${serialNumber}`);
-                alert(`> Records: (${message.records.length})`);
+                console.log(`> Serial Number: ${serialNumber}`);
+                console.log(`> Records: (${message.records.length})`);
                 for (const record of message.records){
-                  const textDecoder = new TextDecoder(record.encoding);
-                  alert(`Contenido: ${textDecoder.decode(record.data)}`);
+                  //const textDecoder = new TextDecoder(record.encoding);
+                  console.log(`Contenido: ${textDecoder.decode(record.data)}`);
+                  document.getElementById("input1").value = "record.data";
                 }
               });
             } catch (error) {
@@ -167,8 +168,8 @@
       <main class="px-3">
         <h1>Registro de cambio de baterías</h1><br/><h1>Test NFC</h1><hr/>
         <form>
-          <input id="input1" style="width:60%"></input><br/><br/>
-          <textarea id="input2" style="width:60%; height:150px" ></textarea>
+          <input id="input1" style="width:60%" disabled="true"></input><br/><br/>
+          <input id="input2" style="width:60%" ></input>
         </form>
         <p class="lead">Aquí van los textos a escanear con la etiqueta</p>
         <p class="lead">
