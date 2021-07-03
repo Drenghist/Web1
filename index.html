@@ -25,9 +25,9 @@
         document.getElementById("input1").addEventListener("blur", async () => {
           try{
             const ndef = new NDEFReader();
-            alert("antes del wait");
+            console.log("antes del wait");
             await ndef.scan();
-            alert("after wait");
+            console.log("after wait");
             ndef.addEventListener("readingerror", () => {
               alert("Argh! Cannot read data from the NFC tag. Try another one?");
             });
