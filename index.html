@@ -86,7 +86,7 @@
                 for (const record of message.records){
                   //const textDecoder = new TextDecoder(record.encoding);
                   console.log(`Contenido: ${textDecoder.decode(record.data)}`);
-                  document.getElementById("input1").value = "record.data";
+                  document.getElementById("input1").value = record.data;
                 }
               });
             } catch (error) {
