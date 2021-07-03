@@ -69,7 +69,7 @@
       async function activaNFC() {
         const nfcPermissionStatus = await navigator.permissions.query({ name: "nfc" });
         if (nfcPermissionStatus.state === "granted") {
-          document.getElementById("boton1").setAttribute("hidden",true);
+          document.getElementById("boton1").style.display = 'none';
           try{
               const ndef = new NDEFReader();
               console.log("antes del wait");
@@ -87,7 +87,7 @@
               alert("Argh! " + error);
             }
           }else {
-          document.getElementById("boton1").setAttribute("hidden",false);
+          document.getElementById("boton1").style.display = 'inline';
         }
       } 
 
@@ -155,7 +155,7 @@
         <p class="lead">Aquí van los textos a escanear con la etiqueta</p>
         <p class="lead">
           <!--<button class="btn btn-lg btn-secondary fw-bold border-white bg-white" id="boton1">Enviar</button>-->
-          <input type="button" id="boton1" value="Enviar" hidden="true"></input>
+          <input type="button" id="boton1" value="Enviar" style="display:none"></input>
         </p>
       </main>
 
