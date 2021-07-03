@@ -15,6 +15,7 @@
       function iniciar() {
         //alert("windows on load");
         document.getElementById("input1").focus();
+        document.getElementById("boton1").addEventListener("click",activaNFC,false);
         //document.getElementById("input1").addEventListener("blur",focus1,false);
 
         //Llamo a la función para que active el NFC -------------------------------------------------
@@ -66,22 +67,27 @@
 
       //Función asíncrona que active el NFC -------------------------------------------------
       async function activaNFC() {
-        try{
-            const ndef = new NDEFReader();
-            console.log("antes del wait");
-            await ndef.scan();
-            console.log("after wait");
-            ndef.addEventListener("readingerror", () => {
-              alert("Argh! Cannot read data from the NFC tag. Try another one?");
-            });
+        if (nfcPermissionStatus.state === "granted") {
+          document.getElementById("boton1").setAttribute("hidden",true);
+          try{
+              const ndef = new NDEFReader();
+              console.log("antes del wait");
+              await ndef.scan();
+              console.log("after wait");
+              ndef.addEventListener("readingerror", () => {
+                alert("Argh! Cannot read data from the NFC tag. Try another one?");
+              });
 
-            ndef.addEventListener("reading", ({ message, serialNumber }) => {
-              alert(`> Serial Number: ${serialNumber}`);
-              alert(`> Records: (${message.records.length})`);
-            });
-          } catch (error) {
-            alert("Argh! " + error);
+              ndef.addEventListener("reading", ({ message, serialNumber }) => {
+                alert(`> Serial Number: ${serialNumber}`);
+                alert(`> Records: (${message.records.length})`);
+              });
+            } catch (error) {
+              alert("Argh! " + error);
+            }
           }
+        } else {
+          document.getElementById("boton1").setAttribute("hidden",false);
       }
 
 
@@ -94,32 +100,6 @@
       }
 
       window.addEventListener("load",iniciar,false);
-      /* Activo la lectura en el load. no funciona. --------------------------------------------------------
-      window.addEventListener("load", async () => {
-        try{
-          const ndef = new NDEFReader();
-          await ndef.scan();
-          ndef.addEventListener("readingerror", () => {
-            alert("Argh! Cannot read data from the NFC tag. Try another one?");
-          });
-
-          ndef.addEventListener("reading", ({ message, serialNumber }) => {
-            alert(`> Serial Number: ${serialNumber}`);
-            alert(`> Records: (${message.records.length})`);
-          });
-        } catch (error) {
-          alert("Argh! " + error);
-        }
-      });
-      */
-      
-      /*
-      if ('NDEFReader' in window) { 
-        alert("existe NDEFReader");
-       } else {
-        alert("pos no existe");
-       }*/
-
        
        
       
@@ -174,7 +154,7 @@
         <p class="lead">Aquí van los textos a escanear con la etiqueta</p>
         <p class="lead">
           <!--<button class="btn btn-lg btn-secondary fw-bold border-white bg-white" id="boton1">Enviar</button>-->
-          <input type="button" id="boton1" value="Enviar"></input>
+          <input type="button" id="boton1" value="Enviar" hidden="true"></input>
         </p>
       </main>
 
