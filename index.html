@@ -10,7 +10,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <script src="jquery.js"></script>
     <script>
       function iniciar() {
         //alert("windows on load");
@@ -19,50 +19,22 @@
         //document.getElementById("input1").addEventListener("blur",focus1,false);
 
         //Llamo a la función para que active el NFC -------------------------------------------------
-        activaNFC();
+        //activaNFC();
+        leer("*Opetete*");
 
+      }
 
-        //Activo lectura en el blur. -----------------------------------------------------------------
-        /*document.getElementById("input1").addEventListener("blur", async () => {
-          try{
-            const ndef = new NDEFReader();
-            console.log("antes del wait");
-            await ndef.scan();
-            console.log("after wait");
-            ndef.addEventListener("readingerror", () => {
-              alert("Argh! Cannot read data from the NFC tag. Try another one?");
-            });
-
-            ndef.addEventListener("reading", ({ message, serialNumber }) => {
-              alert(`> Serial Number: ${serialNumber}`);
-              alert(`> Records: (${message.records.length})`);
-            });
-          } catch (error) {
-            alert("Argh! " + error);
-          }
-        },false);*/
-
-         //Con el botón, activo la lectura ----------------------------------------------------------------
-         /*
-        document.getElementById("boton1").addEventListener("click", async () => {
-          try{
-            const ndef = new NDEFReader();
-            await ndef.scan();
-            ndef.addEventListener("readingerror", () => {
-              alert("Argh! Cannot read data from the NFC tag. Try another one?");
-            });
-
-            ndef.addEventListener("reading", ({ message, serialNumber }) => {
-              alert(`> Serial Number: ${serialNumber}`);
-              alert(`> Records: (${message.records.length})`);
-            });
-          } catch (error) {
-            alert("Argh! " + error);
-          }
-        },false);*/
-        
-
-
+      function leer (texto) {
+        if (texto.substring(0,2) == "*B") {
+          if ($("#input1").val() == "") $("#input1").val(texto.substring(2,(texto.length-1)));
+          else $("#input2").val(texto.substring(2,(texto.length-1)));
+        } else if (texto.substring(0,2) == "*O") {
+          $("#input4").val(texto.substring(2,(texto.length-1)));
+        } else if (texto.substring(0,2) == "*C") {
+          $("#input3").val(texto.substring(2,(texto.length-1)));
+        } else {
+          alert("Código no reconocido");
+        }
 
       }
 
@@ -190,10 +162,16 @@
       <main class="px-3">
         <h1>Registro de cambio de baterías</h1><br/><h1>Test NFC</h1><hr/>
         <form>
+          <label for="input1">Batería vacía</label><br/>
           <input id="input1" style="width:60%" disabled="true"></input><br/><br/>
-          <input id="input2" style="width:60%" ></input>
+          <label for="input2">Batería cargada</label><br/>
+          <input id="input2" style="width:60%" disabled="true"></input><br/><br/>
+          <label for="input3">Carretilla</label><br/>
+          <input id="input3" style="width:60%" disabled="true"></input><br/><br/>
+          <label for="input4">Operario</label><br/>
+          <input id="input4" style="width:60%" disabled="true"></input><br/><br/>
         </form>
-        <p class="lead">Aquí van los textos a escanear con la etiqueta</p>
+        <!--<p class="lead">Aquí van los textos a escanear con la etiqueta</p>-->
         <p class="lead">
           <!--<button class="btn btn-lg btn-secondary fw-bold border-white bg-white" id="boton1">Enviar</button>-->
           <input type="button" id="boton1" value="Enviar" style="display:none"></input>
