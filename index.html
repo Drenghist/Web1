@@ -19,8 +19,8 @@
         //document.getElementById("input1").addEventListener("blur",focus1,false);
 
         //Llamo a la función para que active el NFC -------------------------------------------------
-        //activaNFC();
-        leer("*Opetete*");
+        activaNFC();
+        //leer("*Opetete*");
 
       }
 
@@ -58,7 +58,8 @@
                 for (const record of message.records){
                   const textDecoder = new TextDecoder(record.encoding);
                   console.log(`Contenido: ${textDecoder.decode(record.data)}`);
-                  document.getElementById("input1").value = textDecoder.decode(record.data);
+                  //document.getElementById("input1").value = textDecoder.decode(record.data);
+                  leer(textDecoder.decode(record.data));
                 }
               });
             } catch (error) {
@@ -88,7 +89,8 @@
                 for (const record of message.records){
                   const textDecoder = new TextDecoder(record.encoding);
                   console.log(`Contenido: ${textDecoder.decode(record.data)}`);
-                  document.getElementById("input1").value = textDecoder.decode(record.data);
+                  //document.getElementById("input1").value = textDecoder.decode(record.data);
+                  leer(textDecoder.decode(record.data));
                 }
               });
             } catch (error) {
