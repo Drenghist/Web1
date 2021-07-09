@@ -31,8 +31,9 @@
             $("#input1").val(texto.substring(2,(texto.length-1)));
             $("#input1").removeClass("is-invalidalex");
             $("#input1").addClass("is-validalex");
-          } 
-          else {
+          } else if ($("#input1").val() == texto) {
+            alert("Batería ya leída!");
+          } else {
             $("#input2").val(texto.substring(2,(texto.length-1)));
             $("#input2").removeClass("is-invalidalex");
             $("#input2").addClass("is-validalex");
