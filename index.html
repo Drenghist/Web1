@@ -10,6 +10,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="cosas.css" rel="stylesheet">
     <script src="jquery.js"></script>
     <script>
       function iniciar() {
@@ -164,14 +165,14 @@
       <main class="px-3">
         <h1>Registro de cambio de baterías</h1><br/><h1>Test NFC</h1><hr/>
         <form>
-          <label for="input1">Batería vacía</label><br/>
-          <input id="input1" style="width:60%" disabled="true"></input><br/><br/>
-          <label for="input2">Batería cargada</label><br/>
-          <input id="input2" style="width:60%" disabled="true"></input><br/><br/>
-          <label for="input3">Carretilla</label><br/>
-          <input id="input3" style="width:60%" disabled="true"></input><br/><br/>
-          <label for="input4">Operario</label><br/>
-          <input id="input4" style="width:60%" disabled="true"></input><br/><br/>
+          <label for="input1" style="pointer-events:none">Batería vacía</label><br/>
+          <input id="input1" style="width:60%; pointer-events:none" class="is-invalidalex" selected="false" ></input><br/><br/>
+          <label for="input2" style="pointer-events:none">Batería cargada</label><br/>
+          <input id="input2" style="width:60%; pointer-events:none" class="is-invalidalex"></input><br/><br/>
+          <label for="input3" style="pointer-events:none">Carretilla</label><br/>
+          <input id="input3" style="width:60%; pointer-events:none" class="is-invalidalex"></input><br/><br/>
+          <label for="input4" style="pointer-events:none">Operario</label><br/>
+          <input id="input4" style="width:60%; pointer-events:none"></input><br/><br/>
         </form>
         <!--<p class="lead">Aquí van los textos a escanear con la etiqueta</p>-->
         <p class="lead">
