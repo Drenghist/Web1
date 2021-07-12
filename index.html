@@ -87,6 +87,7 @@
               const ndef2 = new NDEFReader();
               await ndef2.scan();
               document.getElementById("boton1").style.display = 'none';
+              $("#formulario").removeClass("visually-hidden");
               //Meto aquí el código que se ejecutó arriba si estaba activo el permiso
               try{
               const ndef = new NDEFReader();
