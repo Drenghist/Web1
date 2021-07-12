@@ -17,8 +17,12 @@ function lanzar(contador) {
   if (distance < 0) {
     clearInterval(x);
     document.getElementById(contador).innerHTML = "";
-    return true;
+    enviarDatos();
   }
 }, 1000);
  
+}
+
+function enviarDatos() {
+  alert("hola");
 }

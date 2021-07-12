@@ -32,9 +32,7 @@
             $("#input2").val(texto.substring(2,(texto.length-1)));
             $("#input2").removeClass("is-invalidalex");
             $("#input2").addClass("is-validalex");
-            if (lanzar("contador") == true) {
-              alert("hola");
-            }
+            lanzar("contador");
           }
         } else if (texto.substring(0,2) == "*U") {
           $("#input4").val(texto.substring(2,(texto.length-1)));
