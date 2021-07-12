@@ -55,6 +55,7 @@
         const nfcPermissionStatus = await navigator.permissions.query({ name: "nfc" });
         if (nfcPermissionStatus.state === "granted") {
           document.getElementById("boton1").style.display = 'none';
+          $("#formulario").removeClass("visually-hidden");
           try{
               const ndef = new NDEFReader();
               console.log("antes del wait");
@@ -78,7 +79,8 @@
               alert("Argh! " + error);
             }
           }else {
-          document.getElementById("boton1").style.display = 'inline';
+          document.getElementById("boton1").style.display = 'inline'; 
+          $("#formulario").addClass("visually-hidden");
           document.getElementById("boton1").addEventListener("click", async () => {
             
             try {
@@ -177,7 +179,7 @@
         
         <hr/>
         <input type="button" class ="btn btn-warning" id="boton1" value="Activar NFC" style="display:none; width: 80%"></input>
-        <form id="formulario" class="visually-hidden" >
+        <form id="formulario">
           <div class="row text-end">  
             <label for="input1" class="col-5" style="pointer-events:none">Batería vacía</label>
             <input id="input1" style="width:40%; pointer-events:none" class="is-invalidalex col-5"></input>
