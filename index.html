@@ -15,14 +15,8 @@
     <script src="contador.js"></script>
     <script>
       function iniciar() {
-        //alert("windows on load");
-        //document.getElementById("input1").focus();
-        
-        //document.getElementById("input1").addEventListener("blur",focus1,false);
-
         //Llamo a la función para que active el NFC -------------------------------------------------
         activaNFC();
-        //leer("*Opetete*");
 
       }
 
@@ -178,7 +172,7 @@
           </nav>
         </div>
       </header>
-
+      <button id="boton1" value="Activar NFC" style="display:none"></button>
       <main class="px-3">
         <h1>Registro de cambio de baterías</h1><br/><h1>Test NFC</h1><hr/>
         <form>
@@ -206,7 +200,7 @@
         <!--<p class="lead">Aquí van los textos a escanear con la etiqueta</p>-->
         <p class="lead">
           <!--<button class="btn btn-lg btn-secondary fw-bold border-white bg-white" id="boton1">Enviar</button>-->
-          <input type="button" id="boton1" value="Enviar" style="display:none"></input>
+          <!-- <input type="button" id="boton1" value="Enviar" style="display:none"></input> -->
         </p>
         <div id="contador">
 
