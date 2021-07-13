@@ -11,12 +11,14 @@ function lanzar(contador) {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
+  $("contador").removeClass("invisible");
   document.getElementById(contador).innerHTML = "En "+seconds + " segundos se lanzará la información al servidor";
     
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
     document.getElementById(contador).innerHTML = "";
+    $("contador").addClass("invisible");
     enviarDatos();
   }
 }, 1000);
