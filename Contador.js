@@ -32,4 +32,10 @@ function enviarDatos() {
 
 function wipe() {
   document.getElementById("formulario").reset();
+  $("#input1").removeClass("is-validalex");
+  $("#input1").addClass("is-invalidalex");
+  $("#input2").removeClass("is-validalex");
+  $("#input2").addClass("is-invalidalex");
+  $("#input3").removeClass("is-validalex");
+  $("#input3").addClass("is-invalidalex");
 }
