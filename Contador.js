@@ -26,5 +26,10 @@ function lanzar(contador) {
 }
 
 function enviarDatos() {
-  alert("hola");
+  //instrucción para enviar los datos
+  wipe();
+}
+
+function wipe() {
+  document.getElementById("formulario").reset();
 }
