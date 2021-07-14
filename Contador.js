@@ -18,7 +18,7 @@ function lanzar(contador) {
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    //document.getElementById(contador).innerHTML = "";
+    document.getElementById(contador).innerHTML = "En 0 segundos se lanzará la información al servidor";
     //$("#contador").addClass("invisible"); //oculto con clases
     //$('#contador').hide(); //oculta a saco
     $('#contador').animate({opacity:"hide"});
