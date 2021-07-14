@@ -1,7 +1,7 @@
 function lanzar(contador) {
 
   // Número de milisegundos para iniciar la cuenta atrás
-  var countDownDate = new Date().getTime()+3200;
+  var countDownDate = new Date().getTime()+32000;
 
   // Actualiza la cuenta atrás cada segundo
   var x = setInterval(function() {
@@ -11,14 +11,17 @@ function lanzar(contador) {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
-  $("#contador").removeClass("invisible");
+  //$("#contador").removeClass("invisible"); -- Si lo hago por clases, no vale la pena
+  //$('#contador').show(); -- Muestra de golpe
+  $('#contador').animate({opacity:"show"}); // Muestra a los pocos
   document.getElementById(contador).innerHTML = "En "+seconds + " segundos se lanzará la información al servidor";
-    
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
     document.getElementById(contador).innerHTML = "";
-    $("#contador").addClass("invisible");
+    //$("#contador").addClass("invisible"); //oculto con clases
+    //$('#contador').hide(); //oculta a saco
+    $('#contador').animate({opacity:"hide"});
     //$("#contador").alert("close"); -- Para que desaparezca "fadeando"
     enviarDatos();
   }
