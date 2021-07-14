@@ -18,6 +18,7 @@
       function iniciar() {
         //Llamo a la función para que active el NFC -------------------------------------------------
         activaNFC();
+        lanzar("contador");
       }
 
       function leer (texto) {
@@ -215,7 +216,9 @@
     -->
 
       <footer class="mt-auto text-white-50">
-        <div id="contador" class="alert alert-warning alert-dismissible fade show mx-auto invisible" style="width:70%; height:5em">
+        <div style="width:70%; height:5em" class="mx-auto">
+          <div id="contador" class="alert alert-warning alert-dismissible fade show mx-auto invisible">
+          </div>
         </div>
       </footer>
     </div>
