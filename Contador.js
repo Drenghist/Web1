@@ -19,6 +19,7 @@ function lanzar(contador) {
     clearInterval(x);
     document.getElementById(contador).innerHTML = "";
     $("#contador").addClass("invisible");
+    //$("#contador").alert("close"); -- Para que desaparezca "fadeando"
     enviarDatos();
   }
 }, 1000);
