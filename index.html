@@ -15,11 +15,13 @@
     <script src="jquery.js"></script>
     <script src="contador.js"></script>
     <script>
+      let lanzado = false;
       function iniciar() {
         //Llamo a la función para que active el NFC -------------------------------------------------
+         
         activaNFC();
         $("#contador").hide();
-        lanzar("contador");
+        $("#contador").removeClass("invisible"); //Lo hago visible después de haberlo "hideado".
       }
 
       function leer (texto) {
@@ -34,22 +36,32 @@
             $("#input2").val(texto.substring(2,(texto.length-1)));
             $("#input2").removeClass("is-invalidalex");
             $("#input2").addClass("is-validalex");
-            lanzar("contador");
+            prelanzar();
           }
         } else if (texto.substring(0,2) == "*U") {
           $("#input4").val(texto.substring(2,(texto.length-1)));
           $("#input4").addClass("is-validalex");
+          prelanzar();
         } else if (texto.substring(0,2) == "*C") {
           $("#input3").val(texto.substring(2,(texto.length-1)));
           $("#input3").removeClass("is-invalidalex");
           $("#input3").addClass("is-validalex");
+          prelanzar();
         } else if (texto.substring(0,2) == "*X") {
           $("#input5").val(texto.substring(2,(texto.length-1)));
           $("#input5").addClass("is-validalex");
+          prelanzar();
         } else {
           alert("Código no reconocido");
         }
 
+      }
+
+      function prelanzar() {
+        if (($("#input1").val() == "")&&($("#input2").val() == "")&&($("#input3").val() == "") && lanzado == false) {
+          lanzar("contador");
+          lanzado = true;
+        }
       }
 
       //Función asíncrona que active el NFC -------------------------------------------------
@@ -218,7 +230,7 @@
 
       <footer class="mt-auto text-white-50">
         <div style="width:70%; height:5em" class="mx-auto">
-          <div id="contador" class="alert alert-warning" >
+          <div id="contador" class="alert alert-warning invisible" >
           </div>
         </div>
       </footer>
