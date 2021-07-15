@@ -42,5 +42,7 @@ function wipe() {
   $("#input2").addClass("is-invalidalex");
   $("#input3").removeClass("is-validalex");
   $("#input3").addClass("is-invalidalex");
+  $("#input4").removeClass("is-validalex");
+  $("#input5").removeClass("is-validalex");
   lanzado = false;
 }
