@@ -32,8 +32,8 @@ function lanzar(contador) {
 function enviarDatos() {
   //instrucción para enviar los datos
   wipe();
-  alert(`hola ${$("#input1").val()}`)
-  $.post('http://drenghist.synology.me:8080/baterias/index.php', `origen=${$("#input1").val()}&destino=${$("#input2").val()}&carretilla=${$("#input3").val()}&usuario=${$("#input4").val()}&obs=${$("#input5").val()}`);
+  //alert(`hola ${$("#input1").val()}`)
+  $.post('http://drenghist.synology.me:8080/baterias/index.php', `origen=oriapp&destino=destapp&carretilla=carrapp&usuario=usuapp&obs=obsapp`);
 }
 
 function wipe() {
