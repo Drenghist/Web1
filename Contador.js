@@ -1,7 +1,7 @@
 function lanzar(contador) {
 
   // Número de milisegundos para iniciar la cuenta atrás
-  var countDownDate = new Date().getTime()+32000;
+  var countDownDate = new Date().getTime()+3200;
 
   // Actualiza la cuenta atrás cada segundo
   var x = setInterval(function() {
