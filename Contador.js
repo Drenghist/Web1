@@ -31,10 +31,11 @@ function lanzar(contador) {
 
 function enviarDatos() {
   //instrucción para enviar los datos
+  $("#formulario").submit();
   wipe();
   //alert(`hola ${$("#input1").val()}`)
   //$.post('http://drenghist.synology.me:8080/baterias/index.php', `origen=oriapp&destino=destapp&carretilla=carrapp&usuario=usuapp&obs=obsapp`);
-  $("#formulario").submit();
+  
 }
 
 function wipe() {
