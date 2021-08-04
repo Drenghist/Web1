@@ -194,26 +194,26 @@
         
         <hr/>
         <input type="button" class ="btn btn-warning" id="boton1" value="Activar NFC" style="display:none; width: 80%"></input>
-        <form id="formulario">
+        <form id="formulario" action="http://drenghist.synology.me:8080/baterias/server2.php">
           <div class="row text-end">  
             <label for="input1" class="col-5" style="pointer-events:none">Batería vacía</label>
-            <input id="input1" style="width:40%; pointer-events:none" class="is-invalidalex col-5"></input>
+            <input id="input1" name="origen" style="width:40%; pointer-events:none" class="is-invalidalex col-5"></input>
           </div><br/>
           <div class="row text-end">
             <label for="input2" class="col-5" style="pointer-events:none">Batería cargada</label>
-            <input id="input2" style="width:40%; pointer-events:none" class="is-invalidalex col-5"></input>
+            <input id="input2" name="destino" style="width:40%; pointer-events:none" class="is-invalidalex col-5"></input>
           </div><br/>
           <div class="row text-end">
             <label for="input3" class="col-5" style="pointer-events:none">Carretilla</label>
-            <input id="input3" style="width:40%; pointer-events:none" class="is-invalidalex col-5"></input>
+            <input id="input3" name="carretilla" style="width:40%; pointer-events:none" class="is-invalidalex col-5"></input>
           </div><br/>
           <div class="row text-end">
             <label for="input4" class="col-5" style="pointer-events:none">Operario</label>
-            <input id="input4" style="width:40%; pointer-events:none" class="col-5"></input>
+            <input id="input4" name="usuario" style="width:40%; pointer-events:none" class="col-5"></input>
           </div><br/>
           <div class="row text-end">
             <label for="input5" class="col-5" style="pointer-events:none">Observaciones</label>
-            <input id="input5" style="width:40%; pointer-events:none" class="col-5"></input>
+            <input id="input5" name="obs" style="width:40%; pointer-events:none" class="col-5"></input>
           </div><br/>
         </form>
         
