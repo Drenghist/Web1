@@ -32,6 +32,7 @@ function lanzar(contador) {
 function enviarDatos() {
   //instrucción para enviar los datos
   $.post('https://drenghist.sytes.net/server2.php', `origen=oriapp&destino=destapp&carretilla=carrapp&usuario=usuapp&obs=obsapp`);
+  alert($("#input1").val());
   wipe();
   //alert(`hola ${$("#input1").val()}`)
   
