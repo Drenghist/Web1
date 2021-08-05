@@ -31,7 +31,7 @@ function lanzar(contador) {
 
 function enviarDatos() {
   //instrucción para enviar los datos
-  $.post('https://drenghist.sytes.net/server2.php', `origen=${$("#input1").val()}&destino=destapp&carretilla=carrapp&usuario=usuapp&obs=obsapp`);
+  $.post('https://drenghist.sytes.net/server2.php', `origen=${$("#input1").val()}&destino=${$("#input2").val()}&carretilla=${$("#input3").val()}&usuario=${$("#input4").val()}&obs=${$("#input5").val()}`);
   alert($("#input1").val());
   wipe();
   //alert(`hola ${$("#input1").val()}`)
