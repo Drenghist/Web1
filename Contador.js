@@ -38,15 +38,19 @@ function alertafinal(tiempo, mensaje) {
     var now = new Date().getTime();
     var distance = countDownDate - now;
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    $('#contador').animate({opacity:"show"});
     document.getElementById("contador").innerHTML = mensaje;
+    $('#contador').animate({opacity:"show"});
+    
     if (distance < 0) {
       clearInterval(x);
       document.getElementById("contador").innerHTML = mensaje;
       $('#contador').animate({opacity:"hide"});
-      $("#contador").addClass("alert-warning");
-      $("#contador").removeClass("alert-success");
+      $('#contador').addEventListener("animationend", () =>{
+        $("#contador").addClass("alert-warning");
+        $("#contador").removeClass("alert-success");
+        $('#contador').removeEventListener("animationend");
+      }, true);
+      
     }
   }, 1000);
   
@@ -59,7 +63,7 @@ function enviarDatos() {
   $.post('https://drenghist.sytes.net/server2.php', `origen=${$("#input1").val()}&destino=${$("#input2").val()}&carretilla=${$("#input3").val()}&usuario=${$("#input4").val()}&obs=${$("#input5").val()}`, function(status){
     //Aquí irá el código de que funcionó OK
     error = true;
-    alertafinal(3200, "Enviado correctamente!");
+    alertafinal(2000, "Enviado correctamente!");
 
 
   });
