@@ -33,7 +33,7 @@ function alertafinal(tiempo, mensaje) {
 
   var countDownDate = new Date().getTime()+tiempo;
   $("#contador").removeClass("alert-warning");
-  $("#contador").addClass("alert-success");
+  $("#contador").addClass("alert-danger");
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -47,7 +47,7 @@ function alertafinal(tiempo, mensaje) {
       $('#contador').animate({opacity:"hide"});
       setTimeout(function () {
         $("#contador").addClass("alert-warning");
-        $("#contador").removeClass("alert-success");
+        $("#contador").removeClass("alert-danger");
       }, 1200);
       
       
