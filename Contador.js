@@ -45,11 +45,11 @@ function alertafinal(tiempo, mensaje) {
       clearInterval(x);
       document.getElementById("contador").innerHTML = mensaje;
       $('#contador').animate({opacity:"hide"});
-      
+      $("#contador").addClass("alert-warning");
+      $("#contador").removeClass("alert-success");
     }
   }, 1000);
-  $("#contador").addClass("alert-warning");
-  $("#contador").removeClass("alert-success");
+  
 }
 
 
