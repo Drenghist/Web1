@@ -45,7 +45,7 @@ function alertafinal(tiempo, mensaje) {
       clearInterval(x);
       document.getElementById("contador").innerHTML = mensaje;
       $('#contador').animate({opacity:"hide"});
-      $('#contador').addEventListener("animationend", () =>{
+      document.getElementById("contador").addEventListener("animationend", () =>{
         $("#contador").addClass("alert-warning");
         $("#contador").removeClass("alert-success");
         $('#contador').removeEventListener("animationend");
@@ -55,6 +55,8 @@ function alertafinal(tiempo, mensaje) {
   }, 1000);
   
 }
+
+
 
 
 function enviarDatos() {
