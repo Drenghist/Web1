@@ -48,7 +48,6 @@ function alertafinal(tiempo, mensaje) {
       document.getElementById("contador").addEventListener("animationend", () =>{
         $("#contador").addClass("alert-warning");
         $("#contador").removeClass("alert-success");
-        $('#contador').removeEventListener("animationend");
       }, true);
       
     }
