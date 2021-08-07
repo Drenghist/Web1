@@ -1,7 +1,7 @@
-function lanzar(contador) {
+function lanzar(contador, tiempo) {
 
   // Número de milisegundos para iniciar la cuenta atrás
-  var countDownDate = new Date().getTime()+3200;
+  var countDownDate = new Date().getTime()+tiempo;
 
   // Actualiza la cuenta atrás cada segundo
   var x = setInterval(function() {
@@ -31,9 +31,13 @@ function lanzar(contador) {
 
 function enviarDatos() {
   //instrucción para enviar los datos
+  var error = false;
   $.post('https://drenghist.sytes.net/server2.php', `origen=${$("#input1").val()}&destino=${$("#input2").val()}&carretilla=${$("#input3").val()}&usuario=${$("#input4").val()}&obs=${$("#input5").val()}`, function(status){
-    alert(status);
-    alert("hola");
+    //Aquí irá el código de que funcionó OK
+    error = true;
+
+
+
   });
   wipe();
   //alert(`hola ${$("#input1").val()}`)
