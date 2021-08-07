@@ -22,6 +22,8 @@ function lanzar(contador, tiempo) {
     //$("#contador").addClass("invisible"); //oculto con clases
     //$('#contador').hide(); //oculta a saco
     $('#contador').animate({opacity:"hide"});
+    setTimeout(function () {
+      }, 1200);
     //$("#contador").alert("close"); -- Para que desaparezca "fadeando"
     enviarDatos();
   }
