@@ -64,18 +64,12 @@ function alertafinal(tiempo, mensaje, color) {
 
 function enviarDatos() {
   //instrucción para enviar los datos
-  var enviook = false;
   $.post('https://drenghist.sytes.net/server2.php', `origen=${$("#input1").val()}&destino=${$("#input2").val()}&carretilla=${$("#input3").val()}&usuario=${$("#input4").val()}&obs=${$("#input5").val()}`, function(status){
     //Aquí irá el código de que funcionó OK
-    enviook = true;
     alertafinal(2000, "¡Enviado correctamente!", "alert-success");
 
 
   });
-
-  if (enviook == false) {
-    alertafinal(2000, "Error de envío", "alert-danger");
-  }
   wipe();
   //alert(`hola ${$("#input1").val()}`)
   
