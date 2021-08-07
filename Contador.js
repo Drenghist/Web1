@@ -66,8 +66,12 @@ function enviarDatos() {
   //instrucción para enviar los datos
   $.post('https://drenghist.sytes.net/server2.php', `origen=${$("#input1").val()}&destino=${$("#input2").val()}&carretilla=${$("#input3").val()}&usuario=${$("#input4").val()}&obs=${$("#input5").val()}`, function(data, status){
     //Aquí irá el código de que funcionó OK
-    alertafinal(2000, "¡Enviado correctamente!", "alert-success");
-    alert(data);
+    
+    if (data == "respuestacorrecta"){
+      alertafinal(2000, "¡Enviado correctamente!", "alert-success");
+    } else {
+      alertafinal(2000, "Error de envío", "alert-danger");
+    }
 
   });
   wipe();
