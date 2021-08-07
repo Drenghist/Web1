@@ -23,9 +23,10 @@ function lanzar(contador, tiempo) {
     //$('#contador').hide(); //oculta a saco
     $('#contador').animate({opacity:"hide"});
     setTimeout(function () {
+      enviarDatos();
       }, 1200);
     //$("#contador").alert("close"); -- Para que desaparezca "fadeando"
-    enviarDatos();
+    
   }
 }, 1000);
  
