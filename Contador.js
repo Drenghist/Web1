@@ -24,7 +24,7 @@ function lanzar(contador, tiempo) {
     $('#contador').animate({opacity:"hide"});
     setTimeout(function () {
       enviarDatos();
-      }, 1200);
+      }, 500);
     //$("#contador").alert("close"); -- Para que desaparezca "fadeando"
     
   }
