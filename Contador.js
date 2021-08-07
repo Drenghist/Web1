@@ -33,6 +33,7 @@ function enviarDatos() {
   //instrucción para enviar los datos
   $.post('https://drenghist.sytes.net/server2.php', `origen=${$("#input1").val()}&destino=${$("#input2").val()}&carretilla=${$("#input3").val()}&usuario=${$("#input4").val()}&obs=${$("#input5").val()}`, function(status){
     alert(status);
+    alert("hola");
   });
   wipe();
   //alert(`hola ${$("#input1").val()}`)
