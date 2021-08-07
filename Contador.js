@@ -29,13 +29,33 @@ function lanzar(contador, tiempo) {
  
 }
 
+function alertafinal(tiempo, mensaje) {
+
+  var countDownDate = new Date().getTime()+tiempo;
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+    $('#contador').animate({opacity:"show"});
+    document.getElementById("contador").innerHTML = mensaje;
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("contador").innerHTML = mensaje;
+      $('#contador').animate({opacity:"hide"});
+    }
+  }, 1000);
+ 
+}
+
+
 function enviarDatos() {
   //instrucción para enviar los datos
   var error = false;
   $.post('https://drenghist.sytes.net/server2.php', `origen=${$("#input1").val()}&destino=${$("#input2").val()}&carretilla=${$("#input3").val()}&usuario=${$("#input4").val()}&obs=${$("#input5").val()}`, function(status){
     //Aquí irá el código de que funcionó OK
     error = true;
-
+    alertafinal(3200, "Enviado correctamente!");
 
 
   });
