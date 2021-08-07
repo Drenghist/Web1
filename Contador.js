@@ -32,23 +32,24 @@ function lanzar(contador, tiempo) {
 function alertafinal(tiempo, mensaje) {
 
   var countDownDate = new Date().getTime()+tiempo;
+  $("#contador").removeClass("alert-warning");
+  $("#contador").addClass("alert-success");
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    $("#contador").removeClass("alert-warning");
-    $("#contador").addClass("alert-seccess");
+    
     $('#contador').animate({opacity:"show"});
     document.getElementById("contador").innerHTML = mensaje;
     if (distance < 0) {
       clearInterval(x);
       document.getElementById("contador").innerHTML = mensaje;
       $('#contador').animate({opacity:"hide"});
-      $("#contador").addClass("alert-warning");
-      $("#contador").removeClass("alert-seccess");
+      
     }
   }, 1000);
- 
+  $("#contador").addClass("alert-warning");
+  $("#contador").removeClass("alert-success");
 }
 
 
