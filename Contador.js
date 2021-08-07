@@ -64,7 +64,7 @@ function alertafinal(tiempo, mensaje, color) {
 
 function enviarDatos() {
   //instrucción para enviar los datos
-  $.post('https://drenghist.sytes.net/server2.php', `origen=${$("#input1").val()}&destino=${$("#input2").val()}&carretilla=${$("#input3").val()}&usuario=${$("#input4").val()}&obs=${$("#input5").val()}`, function(data, status){
+  /*$.post('https://drenghist.sytes.net/server2.php', `origen=${$("#input1").val()}&destino=${$("#input2").val()}&carretilla=${$("#input3").val()}&usuario=${$("#input4").val()}&obs=${$("#input5").val()}`, function(data, status){
     //Aquí irá el código de que funcionó OK
     
     if (data == "respuestacorrecta"){
@@ -73,6 +73,19 @@ function enviarDatos() {
       alertafinal(2000, "Error de envío", "alert-danger");
     }
 
+  });*/
+
+  $.ajax({
+    url: 'https://drenghist.sytes.net/server2.php',
+    type: 'POST',
+    data: `origen=${$("#input1").val()}&destino=${$("#input2").val()}&carretilla=${$("#input3").val()}&usuario=${$("#input4").val()}&obs=${$("#input5").val()}`,
+    async: true,
+    success: () => {
+      alertafinal(2000, "¡Enviado correctamente!", "alert-success");
+    },
+    error: () => {
+      alertafinal(2000, "Error de envío", "alert-danger");
+    }
   });
   wipe();
   //alert(`hola ${$("#input1").val()}`)
