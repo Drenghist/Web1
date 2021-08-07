@@ -73,7 +73,9 @@ function enviarDatos() {
 
   });
 
-  if (error == false) alertafinal(2000, "Error de envío", "alert-danger");
+  if (error == false) {
+    alertafinal(2000, "Error de envío", "alert-danger");
+  }
   wipe();
   //alert(`hola ${$("#input1").val()}`)
   
