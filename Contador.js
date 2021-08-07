@@ -44,11 +44,11 @@ function alertafinal(tiempo, mensaje) {
     if (distance < 0) {
       clearInterval(x);
       document.getElementById("contador").innerHTML = mensaje;
-      document.getElementById("contador").addEventListener("animationend", () =>{
+      $('#contador').animate({opacity:"hide"});
+      setTimeout(function () {
         $("#contador").addClass("alert-warning");
         $("#contador").removeClass("alert-success");
-      }, true);
-      $('#contador').animate({opacity:"hide"});
+      }, 1200);
       
       
     }
