@@ -76,7 +76,7 @@ function enviarDatos() {
   });*/
 
   $.ajax({
-    url: 'https://drenghist.sytes.net/server2.php',
+    url: 'https://drenghist.sytes.net/registros.php',
     type: 'POST',
     data: `origen=${$("#input1").val()}&destino=${$("#input2").val()}&carretilla=${$("#input3").val()}&usuario=${$("#input4").val()}&obs=${$("#input5").val()}`,
     async: true,
