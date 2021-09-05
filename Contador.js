@@ -10,10 +10,8 @@ function lanzar(contador, tiempo) {
   var distance = countDownDate - now;
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-  // Output the result in an element with id="demo"
-  //$("#contador").removeClass("invisible"); -- Si lo hago por clases, no vale la pena
-  //$('#contador').show(); -- Muestra de golpe
-  $('#contador').animate({opacity:"show"}); // Muestra a los pocos
+  // Muestra el mensaje a los pocos
+  $('#contador').animate({opacity:"show"}); 
   document.getElementById(contador).innerHTML = "En "+seconds + " segundos se lanzará la información al servidor";
   // If the count down is over, write some text 
   if (distance < 0) {
