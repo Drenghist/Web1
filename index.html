@@ -58,8 +58,8 @@
 
       function prelanzar() {
         if (($("#input1").val() != "")&&($("#input2").val() != "")&&($("#input3").val() != "") && (lanzado == false)) {
-          alertafinal(10000,"En "+seconds + " segundos se lanzará la información al servidor","alert-warning");
-          //lanzar("contador",10000);
+          
+          lanzar(10000);
           lanzado = true;
         }
       }
