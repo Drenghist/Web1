@@ -233,5 +233,5 @@ function wipe() {
 document.getElementById("input4").addEventListener("click",clickoper,false);
 
 function clickoper() {
-document.getElementById("inpu4").innerHTML ="";
+document.getElementById("input4").innerHTML ="";
 }
