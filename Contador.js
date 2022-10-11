@@ -234,5 +234,5 @@ function wipe() {
 
 
 function clickoper() {
-document.getElementById("input4").innerHTML ="";
+document.getElementById("input4").value ="";
 }
