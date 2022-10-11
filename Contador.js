@@ -229,3 +229,9 @@ function wipe() {
   $("#input5").removeClass("is-validalex");
   lanzado = false;
 }
+
+document.getElementById("input4").addEventListener("click",clickoper,false);
+
+function clickoper() {
+document.getElementById("inpu4").innerHTML ="";
+}
