@@ -12,6 +12,7 @@ function iniciar() {
   activaNFC();
   $("#contador").hide();
   $("#contador").removeClass("invisible"); //Lo hago visible después de haberlo "hideado".
+  document.getElementById("input4").addEventListener("click",clickoper,false);
 }
 
 /*
@@ -230,7 +231,7 @@ function wipe() {
   lanzado = false;
 }
 
-document.getElementById("input4").addEventListener("click",clickoper,false);
+
 
 function clickoper() {
 document.getElementById("input4").innerHTML ="";
