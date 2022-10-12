@@ -240,8 +240,8 @@ document.getElementById("input4").value ="";
 
 function clicktecla() {
   if (document.getElementById("input4").value.length>3){
-    navigator.virtualKeyboard.hide();
-    document.getElementById("input4").value = "pepe";
+    
+    document.activeElement.blur();
     
   } 
 }
