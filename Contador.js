@@ -239,8 +239,7 @@ document.getElementById("input4").value ="";
 }
 
 function clicktecla() {
-  alert("hola");
-  if (document.getElementById("input4").length>3){
+  if (document.getElementById("input4").value.length>3){
     navigator.virtualKeyboard.hide();
     
   } 
