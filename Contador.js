@@ -239,7 +239,7 @@ document.getElementById("input4").value ="";
 }
 
 function clicktecla() {
-  if (document.getElementById("input4").value.length>3){
+  if (document.getElementById("input4").value.length>2){
     
     document.activeElement.blur();
     
