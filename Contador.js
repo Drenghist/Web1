@@ -13,6 +13,7 @@ function iniciar() {
   $("#contador").hide();
   $("#contador").removeClass("invisible"); //Lo hago visible después de haberlo "hideado".
   document.getElementById("input4").addEventListener("click",clickoper,false);
+  document.getElementById("input4").addEventListener("keydown",clicktecla, false);
 }
 
 /*
@@ -235,4 +236,10 @@ function wipe() {
 
 function clickoper() {
 document.getElementById("input4").value ="";
+}
+
+function clicktecla() {
+  if (document.getElementById("input4").length>3){
+    navigator.virtualKeyboard.hide();
+  } 
 }
