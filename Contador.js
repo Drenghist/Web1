@@ -13,7 +13,7 @@ function iniciar() {
   $("#contador").hide();
   $("#contador").removeClass("invisible"); //Lo hago visible después de haberlo "hideado".
   document.getElementById("input4").addEventListener("click",clickoper,false);
-  document.getElementById("input4").addEventListener("keydown",clicktecla, false);
+  document.getElementById("input4").addEventListener("keyup",clicktecla, false);
 }
 
 /*
@@ -239,7 +239,7 @@ document.getElementById("input4").value ="";
 }
 
 function clicktecla() {
-  if (document.getElementById("input4").value.length>2){
+  if (document.getElementById("input4").value.length>3){
     
     document.activeElement.blur();
     
