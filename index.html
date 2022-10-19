@@ -72,8 +72,18 @@
           </div><br/>
           <div class="row text-end">
             <label for="input5" class="col-5" style="pointer-events:none">Observaciones</label>
-            <input id="input5" name="obs" style="width:40%; pointer-events:none" class="col-5"></input>
+            <select id="input5" name="obs" style="width:40%; pointer-events:auto" class="col-5">
+              <option label="---" value=""></option>
+              <option label="Batería <75%" value="75"></option>
+              <option label="Batería <50%" value="50"></option>
+              <option label="Descargada" value="descar"></option>
+              <option label="Sin agua" value="sin_agua"></option>
+              <option label="Revisar batería" value="revisar"></option>
+              <option label="Bat. no corresponde" value="no_indic"></option>
+              
+            </select>
           </div><br/>
+
         </form>
         
         <p class="lead">
