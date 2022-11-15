@@ -14,6 +14,26 @@ function iniciar() {
   $("#contador").removeClass("invisible"); //Lo hago visible después de haberlo "hideado".
   document.getElementById("input4").addEventListener("click",clickoper,false);
   document.getElementById("input4").addEventListener("keyup",clicktecla, false);
+  //Meto los disparadores para cuando deselecciono uno de los inputs no NFC
+  document.getElementById("input4").addEventListener("blur",prelanzar, false);
+  document.getElementById("input6").addEventListener("change",prelanzar,false);
+  document.getElementById("input4").addEventListener("blur",checkuser, false);
+  document.getElementById("input6").addEventListener("change",checkhoras,false);
+}
+
+
+function checkuser() {
+  if (($("#input4").val() != "")){
+    $("#input4").removeClass("is-invalidalex");
+    $("#input4").addClass("is-validalex");
+  }
+}
+
+function checkhoras() {
+  if (($("#input6").val() != "")){
+    $("#input6").removeClass("is-invalidalex");
+    $("#input6").addClass("is-validalex");
+  }
 }
 
 /*
@@ -90,7 +110,7 @@ async function activaNFC() {
  * Función que comprueba que se cumplen las condiciones para lanzar la información al servidor
  */
 function prelanzar() {
-  if (($("#input1").val() != "")&&($("#input2").val() != "")&&($("#input3").val() != "") && (lanzado == false)) {
+  if (($("#input1").val() != "")&&($("#input2").val() != "")&&($("#input3").val() != "") && (lanzado == false) && ($("#input4").val() != "") && ($("#input6").val() != "")) {
     
     lanzar(10000);
     lanzado = true;
@@ -145,6 +165,7 @@ function leer (texto) {
     }
   } else if (texto.substring(0,2) == "*U") {
     $("#input4").val(texto.substring(2,(texto.length-1)));
+    $("#input4").removeClass("is-invalidalex");
     $("#input4").addClass("is-validalex");
     prelanzar();
   } else if (texto.substring(0,2) == "*C") {
@@ -228,7 +249,9 @@ function wipe() {
   $("#input3").removeClass("is-validalex");
   $("#input3").addClass("is-invalidalex");
   $("#input4").removeClass("is-validalex");
-  $("#input5").removeClass("is-validalex");
+  $("#input4").addClass("is-invalidalex");
+  $("#input6").removeClass("is-validalex");
+  $("#input6").addClass("is-invalidalex");
   lanzado = false;
 }
 
