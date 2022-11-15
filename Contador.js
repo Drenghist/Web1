@@ -111,6 +111,23 @@ async function activaNFC() {
  * Función que comprueba que se cumplen las condiciones para lanzar la información al servidor
  */
 function prelanzar() {
+
+  //Checkeo los campos para poner en rojo los que no estén cubiertos (solo manuales)
+  if ($("#input4").val() == "" && $("#input4").hasClass('is-validalex')){
+    $("#input4").removeClass("is-validalex");
+    $("#input4").addClass("is-invalidalex");
+  }
+
+    if ($("#input6").val() == "" && $("#input6").hasClass('is-validalex')){
+    $("#input6").removeClass("is-validalex");
+    $("#input6").addClass("is-invalidalex");
+  }
+
+
+
+
+
+
   if (($("#input1").val() != "")&&($("#input2").val() != "")&&($("#input3").val() != "") && (lanzado == false) && ($("#input4").val() != "") && ($("#input6").val() != "")) {
     
     lanzar(10000);
