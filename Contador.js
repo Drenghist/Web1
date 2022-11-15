@@ -12,7 +12,8 @@ function iniciar() {
   activaNFC();
   $("#contador").hide();
   $("#contador").removeClass("invisible"); //Lo hago visible después de haberlo "hideado".
-  document.getElementById("input4").addEventListener("click",clickoper,false);
+  document.getElementById("input4").addEventListener("click",clickoper,false); // Llama a función de borrar input 4 (usuario)
+  document.getElementById("input6").addEventListener("click",clickhoras,false); // Llama a función de borrar input 6 (horas)
   document.getElementById("input4").addEventListener("keyup",clicktecla, false);
   //Meto los disparadores para cuando deselecciono uno de los inputs no NFC
   document.getElementById("input4").addEventListener("blur",prelanzar, false);
@@ -259,6 +260,10 @@ function wipe() {
 
 function clickoper() {
 document.getElementById("input4").value ="";
+}
+
+function clickhoras() {
+document.getElementById("input6").value ="";
 }
 
 function clicktecla() {
