@@ -113,12 +113,12 @@ async function activaNFC() {
 function prelanzar() {
 
   //Checkeo los campos para poner en rojo los que no estén cubiertos (solo manuales)
-  if ($("#input4").val() == "" && $("#input4").hasClass('is-validalex')){
+  if (($("#input4").val() == "") && ($("#input4").hasClass('is-validalex'))){
     $("#input4").removeClass("is-validalex");
     $("#input4").addClass("is-invalidalex");
   }
 
-    if ($("#input6").val() == "" && $("#input6").hasClass('is-validalex')){
+  if (($("#input6").val() == "") && ($("#input6").hasClass('is-validalex'))){
     $("#input6").removeClass("is-validalex");
     $("#input6").addClass("is-invalidalex");
   }
